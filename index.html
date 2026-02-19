@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Grid Challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Dynamic Grid Challenge</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="column-count">Columns:</label>
+                <button id="decrease-cols">-</button>
+                <input type="number" id="column-count" value="3" min="1" max="12">
+                <button id="increase-cols">+</button>
+            </div>
+            <div class="control-group">
+                <label for="reorder-input">Reorder (e.g., 2,0,1):</label>
+                <input type="text" id="reorder-input" placeholder="0, 1, 2">
+                <button id="apply-order">Reorder</button>
+            </div>
+        </div>
+
+        <div id="grid-container" class="grid-container">
+            <!-- Columns will be injected here -->
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Edit Column</h2>
+            <div class="form-group">
+                <label for="edit-title">Title:</label>
+                <input type="text" id="edit-title">
+            </div>
+            <div class="form-group">
+                <label for="edit-color">Background Color:</label>
+                <div class="color-inputs">
+                    <input type="color" id="edit-color-picker">
+                    <input type="text" id="edit-color-text" placeholder="#RRGGBB or name">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="save-edit" class="primary-btn">Save</button>
+                <button id="cancel-edit" class="secondary-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
